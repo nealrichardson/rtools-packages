@@ -12,7 +12,8 @@ license=("Apache-2.0")
 depends=("${MINGW_PACKAGE_PREFIX}-boost"
          "${MINGW_PACKAGE_PREFIX}-zlib"
          "${MINGW_PACKAGE_PREFIX}-double-conversion"
-		 "${MINGW_PACKAGE_PREFIX}-thrift")
+         "${MINGW_PACKAGE_PREFIX}-snappy"
+         "${MINGW_PACKAGE_PREFIX}-thrift")
 makedepends=("${MINGW_PACKAGE_PREFIX}-cmake"
              "${MINGW_PACKAGE_PREFIX}-gcc")
 options=("staticlibs" "strip" "!buildflags")
@@ -58,7 +59,7 @@ build() {
     -DARROW_HDFS=OFF \
     -DARROW_PYTHON=OFF \
     -DARROW_BOOST_USE_SHARED=OFF \
-    -DARROW_WITH_SNAPPY=OFF \
+    -DARROW_WITH_SNAPPY=ON \
     -DARROW_WITH_ZSTD=OFF \
     -DARROW_WITH_LZ4=OFF \
     -DARROW_JEMALLOC=OFF \
